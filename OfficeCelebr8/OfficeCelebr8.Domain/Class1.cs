@@ -1,4 +1,4 @@
-﻿namespace OfficeCelebr8.Domai
+﻿namespace OfficeCelebr8.Domain
 {
     public class Class1
     {
