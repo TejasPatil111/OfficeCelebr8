@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OfficeCelebr8.Application.DTOs;
+using OfficeCelebr8.Application.Exceptions;
 using OfficeCelebr8.Application.Interfaces;
 using OfficeCelebr8.Domain.Models;
 using OfficeCelebr8.Persistance.Context;
@@ -15,10 +16,10 @@ namespace OfficeCelebr8.Persistance.Repositories
         }
         public async Task<LoginResponse> Login(LoginRequest request)
         {
-            var findUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
+            var findUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email.ToLower());
             if (findUser == null)
             {
-                throw new Exception("User/Employee does not exist on OfficeCelebr8 :(");
+                throw new NotFoundException("User/Employee does not exist on OfficeCelebr8 :(");
             }
             var checkPswd = findUser.Password.Equals(request.Password);
             if (checkPswd == false)
@@ -33,7 +34,7 @@ namespace OfficeCelebr8.Persistance.Repositories
 
         public async Task<RegisterResponse> Register(RegisterRequest request)
         {
-            var checkUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
+            var checkUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email.ToLower());
             if (checkUser != null)
             {
                 throw new Exception("User/Employee already exists! Please log in.");
@@ -42,7 +43,7 @@ namespace OfficeCelebr8.Persistance.Repositories
             {
                 EmployeeId = request.EmployeeId,
                 Name = request.Name,
-                Email = request.Email,
+                Email = request.Email.ToLower(),
                 Password = request.Password,
                 Designation = request.Designation
             };
@@ -53,7 +54,7 @@ namespace OfficeCelebr8.Persistance.Repositories
             }
             return new RegisterResponse
             {
-                Id = _context.Users.FirstOrDefault(u => u.Email == request.Email)!.Id,
+                Id = _context.Users.FirstOrDefault(u => u.Email == request.Email.ToLower())!.Id,
                 IsRegistered = true
             };
         }
