@@ -10,4 +10,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OfficeCelebr8.Application\OfficeCelebr8.Application.csproj" />
+    <ProjectReference Include="..\OfficeCelebr8.Persistance\OfficeCelebr8.Persistance.csproj" />
+  </ItemGroup>
+
 </Project>

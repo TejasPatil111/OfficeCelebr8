@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OfficeCelebr8.Domain\OfficeCelebr8.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

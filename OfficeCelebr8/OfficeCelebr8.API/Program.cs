@@ -1,3 +1,4 @@
+using OfficeCelebr8.Persistance;
 
 namespace OfficeCelebr8.API
 {
@@ -8,6 +9,8 @@ namespace OfficeCelebr8.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddPersistenceServices(builder.Configuration);
+
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
