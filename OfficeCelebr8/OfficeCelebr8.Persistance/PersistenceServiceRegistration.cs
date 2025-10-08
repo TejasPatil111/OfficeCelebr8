@@ -14,6 +14,7 @@ namespace OfficeCelebr8.Persistance
             services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<IRoomRepository, RoomRepository>();
             return services;
         }
     }
