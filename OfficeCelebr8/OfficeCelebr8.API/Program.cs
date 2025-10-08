@@ -1,3 +1,4 @@
+using OfficeCelebr8.API.Middlewares;
 using OfficeCelebr8.Persistance;
 
 namespace OfficeCelebr8.API
@@ -29,7 +30,7 @@ namespace OfficeCelebr8.API
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
+            app.UseMiddleware<ExceptionMiddleware>();
 
             app.MapControllers();
 
