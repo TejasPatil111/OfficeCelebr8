@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+/* Fonts */
+@font-face {
+    font-family: "San Francisco";
+    font-weight: 400;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 800;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "San Francisco";
+    background-color: lightyellow;
+    color: black;
+}

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>OfficeCelebr8Frontend</title>
@@ -7,12 +8,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 </head>
+
 <body>
   <app-root></app-root>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    const icons = document.querySelectorAll(".ico");
+
+    const resetIcons = () => {
+      icons.forEach((item) => {
+        item.style.transform = "scale(1) translateY(0px)";
+      });
+    };
+
+    icons.forEach((item, index) => {
+      item.addEventListener("mouseover", () => focus(index));
+      item.addEventListener("mouseleave", resetIcons);
+    });
+
+    const focus = (index) => {
+      resetIcons();
+      const transformations = [
+        { idx: index - 2, scale: 1.1, translateY: 0 },
+        { idx: index - 1, scale: 1.2, translateY: -6 },
+        { idx: index, scale: 1.5, translateY: -10 },
+        { idx: index + 1, scale: 1.2, translateY: -6 },
+        { idx: index + 2, scale: 1.1, translateY: 0 }
+      ];
+
+      transformations.forEach(({ idx, scale, translateY }) => {
+        if (icons[idx]) {
+          console.log(scale);
+          icons[
+            idx
+          ].style.transform = `scale(${scale}) translateY(${translateY}px)`;
+        }
+      });
+    };
+
+  </script>
 </body>
+
 </html>
