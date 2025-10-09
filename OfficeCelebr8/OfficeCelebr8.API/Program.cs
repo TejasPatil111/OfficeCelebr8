@@ -31,6 +31,10 @@ namespace OfficeCelebr8.API
 
             app.UseAuthorization();
             app.UseMiddleware<ExceptionMiddleware>();
+            app.UseCors(x => x
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()); // For Frontend
 
             app.MapControllers();
 

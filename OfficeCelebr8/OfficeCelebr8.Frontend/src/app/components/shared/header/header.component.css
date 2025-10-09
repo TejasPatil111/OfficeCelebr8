@@ -14,10 +14,11 @@
   border-radius: 16px;
   display: flex;
   justify-content: center;
-  position: absolute;
-  bottom: 20px;
+  position: fixed;
+  bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 99;
 }
 
 .dock .dock-container {

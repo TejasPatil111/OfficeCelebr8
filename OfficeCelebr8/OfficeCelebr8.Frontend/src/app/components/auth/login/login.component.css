@@ -1,5 +1,3 @@
-.login-container {
-    text-align: center;
-    width: 50%;
-    border: 2px solid;
+.login-container .row {
+    margin-right: 0;
 }
