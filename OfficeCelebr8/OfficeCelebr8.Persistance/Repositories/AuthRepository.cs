@@ -28,6 +28,7 @@ namespace OfficeCelebr8.Persistance.Repositories
             }
             return new LoginResponse
             {
+                Email = findUser.Email,
                 IsLoggedIn = true
             };
         }

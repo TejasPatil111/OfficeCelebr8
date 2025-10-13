@@ -39,6 +39,7 @@ export class LoginComponent {
       this.authService.login(this.loginCreds).subscribe({
         next: (response : LoginResponse) => {
           console.log(response.isLoggedIn);
+          sessionStorage.setItem('email', response.email);
           Alert.toast(TYPE.SUCCESS, true, "Logged In Successfully!");
           this.route.navigate(['/']);
         },

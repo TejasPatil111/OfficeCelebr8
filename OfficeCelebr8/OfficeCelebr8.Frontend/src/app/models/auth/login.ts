@@ -8,7 +8,9 @@ export class LoginRequest {
 }
 export class LoginResponse {
     isLoggedIn : boolean;
-    constructor(isLoggedIn : boolean) {
+    email : string;
+    constructor(isLoggedIn : boolean, email : string) {
         this.isLoggedIn = isLoggedIn;
+        this.email = email;
     }
 }

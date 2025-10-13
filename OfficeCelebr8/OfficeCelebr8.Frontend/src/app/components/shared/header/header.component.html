@@ -13,7 +13,7 @@
       <div class="name">Your Rooms</div>
       <img class="ico" src="https://cdn1.iconfinder.com/data/icons/social-media-2618/32/Event-512.png" alt="">
     </li>
-    <li class="li-user li-3" routerLink="login">
+    <li class="li-user li-3" routerLink="login" *ngIf="!checkLoggedIn">
       <div class="name">Login</div>
       <img class="ico ico-user" src="http://www.newdesignfile.com/postpic/2010/12/icon-user-clip-art_287719.png" alt="">
     </li>
