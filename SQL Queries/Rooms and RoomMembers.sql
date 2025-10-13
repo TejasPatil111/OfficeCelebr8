@@ -22,5 +22,7 @@ CREATE TABLE RoomMembers
 
 SELECT * FROM Rooms
 SELECT * FROM RoomMembers
+DROP TABLE Rooms
+DROP TABLE RoomMembers
 DELETE FROM Rooms WHERE Name = 'test'
 DBCC CHECKIDENT ('Rooms', RESEED, 1);
