@@ -26,3 +26,6 @@ DROP TABLE Rooms
 DROP TABLE RoomMembers
 DELETE FROM Rooms WHERE Name = 'test'
 DBCC CHECKIDENT ('Rooms', RESEED, 1);
+
+INSERT INTO Rooms(Name, Description, Capacity, CreatedBy, EventOn, TotalCollection)
+VALUES('Demo Room', 'For demo testing', 10, 13566, '03/12/2025', 1000);

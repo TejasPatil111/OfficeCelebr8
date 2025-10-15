@@ -1,0 +1,18 @@
+<div class="container">
+  <hr>
+  <h1>Your Rooms</h1>
+  <div class="activeRooms">
+    <div class="rooms" *ngFor="let r of rooms">
+      <div class="room">
+        <h4>🏠 {{r.name}}</h4>
+        <span><i class="fa-solid fa-circle blink" style="color: #008000;"></i> Active</span>
+        <br><span>🧑 {{r.createdBy}}</span>
+        <br><span>📅 {{r.eventOn.toString().split('T')[0]}}</span>
+        <br><span>Members: Om, Tejas, Sumeet,..</span>
+        <hr><button class="btn btn-outline-secondary open-btn">Open</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br><br><br><br>

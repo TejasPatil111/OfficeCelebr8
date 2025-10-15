@@ -1,0 +1,39 @@
+.container .activeRooms .rooms {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.container .activeRooms .rooms .room {
+    padding: 30px;
+    margin: 10px;
+    text-decoration: none;
+    list-style: none;
+    border: 1px solid gray;
+    border-radius: 16px;
+}
+.container .activeRooms .rooms .room:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.05);
+}
+.container .activeRooms .rooms .room .open-btn {
+    width: 100%;
+}
+.container .activeRooms .rooms .room span .blink {
+    font-size: small;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
