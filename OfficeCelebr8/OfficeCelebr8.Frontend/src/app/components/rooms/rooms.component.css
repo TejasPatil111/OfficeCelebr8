@@ -21,6 +21,7 @@
 }
 .container .activeRooms .rooms .room span .blink {
     font-size: small;
+    color: #008000;
     animation: blink 1s infinite;
 }
 
