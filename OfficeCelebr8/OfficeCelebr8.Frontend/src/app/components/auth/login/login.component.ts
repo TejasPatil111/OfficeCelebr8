@@ -40,6 +40,7 @@ export class LoginComponent {
         next: (response : LoginResponse) => {
           console.log(response.isLoggedIn);
           sessionStorage.setItem('email', response.email);
+          sessionStorage.setItem('employeeId', response.employeeId.toString());
           Alert.toast(TYPE.SUCCESS, true, "Logged In Successfully!");
           this.route.navigate(['/']);
         },

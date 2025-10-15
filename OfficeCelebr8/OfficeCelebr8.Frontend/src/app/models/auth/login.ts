@@ -9,8 +9,10 @@ export class LoginRequest {
 export class LoginResponse {
     isLoggedIn : boolean;
     email : string;
-    constructor(isLoggedIn : boolean, email : string) {
+    employeeId : number;
+    constructor(isLoggedIn : boolean, email : string, employeeId : number) {
         this.isLoggedIn = isLoggedIn;
         this.email = email;
+        this.employeeId = employeeId;
     }
 }
