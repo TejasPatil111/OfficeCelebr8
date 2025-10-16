@@ -24,10 +24,8 @@ namespace OfficeCelebr8.Persistance.Repositories
         {
             var yourRooms = await _context.Rooms.Include(r => r.Members)
                                                 .Where(r => r.CreatedBy == employeeId).ToListAsync();
-            if (yourRooms.Count == 0)
-            {
-                throw new NotFoundException($"Rooms for employee having ID {employeeId} not found.");
-            }
+            //if (yourRooms.Count == 0)
+            //    throw new NotFoundException($"Rooms for employee having ID {employeeId} not found.");
             return yourRooms;
         }
 
@@ -36,9 +34,7 @@ namespace OfficeCelebr8.Persistance.Repositories
             var room = await _context.Rooms.Include(r => r.Members)
                                            .FirstOrDefaultAsync(r => r.Id == id);
             if (room == null)
-            {
                 throw new NotFoundException($"Room with ID {id} not found.");
-            }
             return room;
         }
 
@@ -84,14 +80,10 @@ namespace OfficeCelebr8.Persistance.Repositories
         {
             var findRoom = await _context.Rooms.FirstOrDefaultAsync(r => r.Id == roomId && r.CreatedBy == employeeId);
             if (findRoom == null)
-            {
                 throw new NotFoundException($"Room with ID {roomId} made by employee having ID {employeeId} not found.");
-            }
             _context.Rooms.Remove(findRoom!);
             if (await _context.SaveChangesAsync() <= 0)
-            {
                 throw new Exception("For some reasons, room has not been deleted.");
-            }
             return true;
         }
 
