@@ -39,10 +39,10 @@ export class Alert {
           toast: true,
           position: 'top',
           showConfirmButton: false,
-          icon: TYPE.SUCCESS,
+          icon: successIcon,
           timerProgressBar:true,
           timer: 2000,
-          title: "Deleted successfully"
+          title: successText
         });
       }
     });
