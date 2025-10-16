@@ -16,8 +16,9 @@
     transition: 0.3s ease-in-out;
     transform: scale(1.05);
 }
-.container .activeRooms .rooms .room .open-btn {
-    width: 100%;
+.container .activeRooms .rooms .room .action-btn .open-btn {
+    width: 70%;
+    margin-right: 8px;
 }
 .container .activeRooms .rooms .room span .blink {
     font-size: small;

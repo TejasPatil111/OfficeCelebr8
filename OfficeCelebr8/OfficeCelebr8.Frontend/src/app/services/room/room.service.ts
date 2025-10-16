@@ -16,5 +16,9 @@ export class RoomService {
   getYourRooms(employeeId : number) : Observable<Room[]> {
     return this.http.get<Room[]>(`${this.apiUrl}/GetYourRooms?employeeId=${employeeId}`);
   }
+
+  deleteRoom(roomId : number, employeeId : number) : Observable<boolean> {
+    return this.http.delete<boolean>(`${this.apiUrl}/DeleteRoom/${roomId}/${employeeId}`);
+  }
   
 }

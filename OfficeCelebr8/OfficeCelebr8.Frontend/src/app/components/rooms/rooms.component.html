@@ -5,13 +5,21 @@
     <div class="rooms" *ngFor="let r of rooms">
       <div class="room">
         <h4>🏠 {{r.name}}</h4>
-        <span><i class="fa-solid fa-circle blink"></i> Active</span>
+
+        <span *ngIf="r.totalCollection > r.collectedTillNow"><i class="fa-solid fa-circle blink"></i> Active</span>
+        <span *ngIf="r.totalCollection <= r.collectedTillNow"><i class="fa-solid fa-circle" style="color: gray;"></i> Completed</span>
+        
         <br><span>🧑 {{r.createdBy}}</span>
         <br><span>📅 {{r.eventOn.toString().split('T')[0]}}</span>
         <br><span>👥: Om, Tejas, Sumeet,..</span>
-        <hr><button class="btn btn-outline-secondary open-btn">Open</button>
+        <hr>
+        <div class="action-btn">
+          <button class="btn btn-outline-secondary open-btn">Open</button>
+          <button class="btn btn-outline-danger" (click)="deleteRoom(r.id)"><i class="fa-solid fa-trash"></i></button>
+        </div>
       </div>
     </div>
+    <h3 style="text-align: center;" *ngIf="rooms.length == 0">Looks like you haven't made any rooms yet 😯</h3>
   </div>
 </div>
 

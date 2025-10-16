@@ -38,4 +38,21 @@ export class RoomsComponent implements OnInit {
       }
     });
   }
+
+  deleteRoom(id : number) {
+    Alert.confirmToast('Delete Room', 'Are you sure you want to delete this room?', TYPE.QUESTION,
+      'Delete', 'Bye-bye ;(', 'Room has been deleted successfully!', TYPE.SUCCESS, () => {
+        this.roomService.deleteRoom(id, Number(sessionStorage.getItem('employeeId'))).subscribe({
+          next: (response:boolean) => {
+            if(response)
+              this.getYourRooms();
+          }, error: (error) => {
+            console.error('Failed to delete your room :(', error);
+            this.errorMsg = JSON.stringify(error.error.message != null ? error.error.message : error.message);
+            Alert.toast(TYPE.ERROR, true, this.errorMsg.replaceAll('"', ''));
+          }
+        });
+      }
+    )
+  }
 }
