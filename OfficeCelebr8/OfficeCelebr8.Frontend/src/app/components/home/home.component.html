@@ -1,5 +1,7 @@
 <div align="center">
-  <button class="btn btn-outline-primary"><i class="fa-solid fa-plus"></i> Create New Room 🏠</button>
+  <button class="btn btn-outline-primary create-btn" data-bs-toggle="modal" data-bs-target="#roomFormModal">
+    <i class="fa-solid fa-plus"></i> Create New Room 🏠
+  </button>
 </div>
 <div class="container">
   <hr>
@@ -32,3 +34,59 @@
 </div>
 
 <br><br><br><br>
+
+<!-- Create New Room Form Modal -->
+<div class="modal fade" id="roomFormModal" tabindex="-1" aria-labelledby="roomFormModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="roomFormModalLabel">🏠 Create New Room</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="roomName" class="form-label">Room Name</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text"><i class="fa-solid fa-house-chimney"></i></span>
+            <input type="text" class="form-control" id="roomName" name="roomName">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="roomDescription" class="form-label">Description</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text"><i class="fa-solid fa-clipboard"></i></span>
+              <textarea type="text" class="form-control" id="roomDescription" name="roomDescription"></textarea>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="roomCapacity" class="form-label">Capacity (No. of members)</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text"><i class="fa-solid fa-users"></i></span>
+              <input type="number" class="form-control" id="roomCapacity" name="roomCapacity">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="roomEventOn" class="form-label">Event On</label>
+            <input type="datetime-local" class="form-control" id="roomEventOn" name="roomEventOn">
+          </div>
+          <div class="mb-3">
+            <label for="roomTotalCollection" class="form-label">Total Collection to be collected</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text"><i class="fa-solid fa-indian-rupee-sign"></i></span>
+              <input type="number" class="form-control" id="roomTotalCollection" name="roomTotalCollection">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="reset" class="btn btn-outline-secondary">
+            <i class="fa-solid fa-eraser"></i> Clear
+          </button>
+          <button type="submit" class="btn btn-outline-primary">
+            <i class="fa-solid fa-plus"></i> Create
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
