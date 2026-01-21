@@ -16,6 +16,8 @@ namespace OfficeCelebr8.Domain.Entities
         public string Role { get; set; } = "User";
         public DateTime CreatedAtUtc { get; set; } = DateTime.UtcNow;
         public string createdBy { get; set; }
+        public int MyProperty { get; set; }
+        public int MyProperty1 { get; set; }
     }
 
 }
